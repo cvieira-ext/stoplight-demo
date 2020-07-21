@@ -13,7 +13,7 @@ paths:
       tags: []
       responses: {}
       operationId: get-marketplaces
-      description: ''
+      description: This endpoint is for managing marketplaces
       requestBody:
         content:
           application/json:
