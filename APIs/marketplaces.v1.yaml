@@ -9,7 +9,7 @@ servers:
 paths:
   /marketplaces:
     get:
-      summary: Your GET endpoint
+      summary: Get marketplace list
       tags: []
       responses:
         '200':
@@ -20,8 +20,19 @@ paths:
         content:
           application/json:
             schema:
-              allOf:
-                - $ref: ../models/marketplace.v1.yaml
+              type: array
+              items:
+                allOf:
+                  - $ref: '#/components/schemas/marketplace'
+                  - $ref: ../models/paginatedList.v1.yaml
+    post:
+      summary: Create marketplace
+      operationId: post-marketplaces
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/marketplace'
 components:
   schemas:
     marketplace:
