@@ -11,9 +11,11 @@ paths:
     get:
       summary: Your GET endpoint
       tags: []
-      responses: {}
+      responses:
+        '200':
+          description: OK
       operationId: get-marketplaces
-      description: This endpoint is for managing marketplaces
+      description: This endpoint is for managing marketplaces.
       requestBody:
         content:
           application/json:
