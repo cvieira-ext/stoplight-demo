@@ -1,0 +1,72 @@
+openapi: 3.0.0
+info:
+  title: submerchant
+  version: '1.0'
+  description: ''
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /submerchant:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-submerchant.
+    parameters: []
+    put:
+      summary: ''
+      operationId: put-submerchant
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: ''
+      operationId: post-submerchant
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/submerchant'
+            examples: {}
+  '/submerchant/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-submerchant-id
+    put:
+      summary: ''
+      operationId: put-submerchant-id
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/submerchant'
+components:
+  schemas:
+    submerchant:
+      title: submerchant
+      type: object
+      description: ''
+      x-examples:
+        submerchant with generated: {}
+      properties:
+        id:
+          type: string
+        displayName:
+          type: string
