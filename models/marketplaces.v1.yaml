@@ -1,0 +1,38 @@
+title: Marketplaces
+type: object
+description: Description of marketplace operators
+x-examples:
+  example-1:
+    integrationMode:
+      marketplaceSolution: DALENYS
+      hostName: hostName
+      apiKey: eyJraWQiOiJNRDUtREY3NDY4QTI4QUFBRDFDNURENTc1MDY1NTg3QTk4
+    smoneyDetails:
+      smoneyToken: MjA7NjQ4O1NFUTRoNkNmfkk=
+      smoneyPath: 'https://rest-pp.s-money.fr/api/sandbox'
+      appUserId: dal-mkt-staging-com
+      bankId: ''
+    clientId: testClientId
+properties:
+  integrationMode:
+    type: object
+    properties:
+      marketplaceSolution:
+        type: string
+      hostName:
+        type: string
+      apiKey:
+        type: string
+  smoneyDetails:
+    type: object
+    properties:
+      smoneyToken:
+        type: string
+      smoneyPath:
+        type: string
+      appUserID:
+        type: string
+      bankId:
+        type: string
+  clientId:
+    type: string

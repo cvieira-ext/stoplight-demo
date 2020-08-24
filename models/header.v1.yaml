@@ -1,0 +1,16 @@
+title: header.v1
+type: object
+description: ''
+properties:
+  id:
+    type: string
+  createDate:
+    type: string
+  updateDate:
+    type: string
+  dbVersion:
+    type: string
+  lastUpdateReason:
+    type: string
+  realmId:
+    type: string

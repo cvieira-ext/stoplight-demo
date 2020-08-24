@@ -3,45 +3,29 @@ info:
   title: marketplaces
   version: '1.0'
   description: Marketplace API for marketplaces project
+  contact:
+    name: Dalenys
+    email: contact@dalenys.com
 servers:
   - url: 'https://staging-payment.dlns.io'
     description: Staging
 paths:
-  /marketplaces:
+  /marketplaces/operators:
     get:
       summary: Your GET endpoint
       tags: []
+      operationId: get-marketplaces
+      description: This endpoint is for managing marketplaces.
+      parameters: []
       responses:
         '200':
           description: OK
-      operationId: get-marketplaces
-      description: This endpoint is for managing marketplaces.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              allOf:
-                - $ref: ../models/marketplace.v1.yaml
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: ../models/marketplaces.v1.yaml
+              examples: {}
+    parameters: []
 components:
-  schemas:
-    marketplace:
-      title: marketplace
-      type: object
-      properties:
-        id:
-          type: string
-        currency:
-          type: string
-        website:
-          type: string
-        vatNumber:
-          type: string
-        status:
-          type: string
-        marketplaceParams:
-          type: object
-          properties:
-            payoutRules:
-              type: string
-            payment:
-              type: string
+  schemas: {}
