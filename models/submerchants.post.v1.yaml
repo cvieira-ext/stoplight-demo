@@ -11,6 +11,8 @@ properties:
     type: string
   kycStatus:
     type: string
+  externalShopId:
+    type: string
   smoneyRemoteInfo:
     type: object
     properties:
@@ -25,6 +27,7 @@ properties:
             type: string
           birthDate:
             type: string
+            format: date-time
           birthCity:
             type: string
           birthCountry:
@@ -58,9 +61,11 @@ properties:
           nafCode:
             type: string
       subAccounts:
-        type: object
-        properties:
-          appAccountId:
-            type: string
-          displayName:
-            type: string
+        type: array
+        items:
+          type: object
+          properties:
+            appAccountId:
+              type: string
+            displayName:
+              type: string

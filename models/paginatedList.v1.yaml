@@ -9,13 +9,9 @@ x-examples:
     totalPages: 0
     last: true
 properties:
-  size:
-    type: integer
-    description: Number of records returned.
-    readOnly: true
-  number:
-    type: integer
-    description: Page number.
+  last:
+    type: boolean
+    description: 'If true, then this is the last page of results.'
     readOnly: true
   totalItems:
     type: number
@@ -25,13 +21,17 @@ properties:
     type: integer
     description: Total number of pages with records.
     readOnly: true
-  last:
-    type: boolean
-    description: 'If true, then this is the last page of results.'
-    readOnly: true
   pageSize:
     type: integer
     description: Number of records for this page.
   pageIndex:
     type: integer
     description: Page number
+  number:
+    type: integer
+    description: Page number.
+    readOnly: true  
+  size:
+    type: integer
+    description: Number of records returned.
+    readOnly: true

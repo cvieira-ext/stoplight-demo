@@ -2,42 +2,62 @@ openapi: 3.0.0
 info:
   title: submerchants.v1
   version: '1.0'
+  description: ''
 servers:
   - url: 'https://staging-payment.dlns.io/marketplaces'
     description: staging
 paths:
   /submerchants:
-    get:
-      summary: Your GET endpoint
-      tags: []
-      responses: {}
-      operationId: get-submerchants
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties: {}
     post:
       summary: ''
       operationId: post-submerchants
       responses:
         '201':
-          description: Created
-          headers: {}
-          content:
-            application/json:
+          description: '1'
+          headers:
+            Location:
               schema:
-                type: object
-                properties:
-                  '':
-                    type: string
+                type: string
+                format: uri
+                example: /marketplaces/submerchants/4633d145-726f-42ef-a48e-892ff0cd66da
+                enum:
+                  - '/marketplaces/submerchants/{submerchantId}'
       parameters: []
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../models/submerchants.v1.yaml
+              $ref: ../models/submerchants.post.v1.yaml
+    get:
+      summary: ''
+      operationId: get-submerchants
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                    - $ref: ../models/header.v1.yaml
+                    - $ref: ../models/submerchants.get.v1.yaml
+                    - $ref: ../models/paginatedList.v1.yaml
+    put:
+      summary: ''
+      operationId: put-submerchants
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/submerchants.post.v1.yaml
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/submerchants.post.v1.yaml
 components:
   schemas: {}
   securitySchemes:
