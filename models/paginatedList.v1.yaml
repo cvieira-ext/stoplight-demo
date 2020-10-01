@@ -1,6 +1,13 @@
 title: list
 type: object
 description: Paginated List
+x-examples:
+  example-1:
+    size: 0
+    number: 0
+    totalItems: 0
+    totalPages: 0
+    last: true
 properties:
   size:
     type: integer
@@ -22,10 +29,9 @@ properties:
     type: boolean
     description: 'If true, then this is the last page of results.'
     readOnly: true
-x-examples:
-  example-1:
-    size: 0
-    number: 0
-    totalItems: 0
-    totalPages: 0
-    last: true
+  pageSize:
+    type: integer
+    description: Number of records for this page.
+  pageIndex:
+    type: integer
+    description: Page number

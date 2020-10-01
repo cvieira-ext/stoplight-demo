@@ -10,3 +10,6 @@ x-examples:
       last: true
     pageSize: 0
     pageIndex: 0
+properties:
+  '':
+    type: string
